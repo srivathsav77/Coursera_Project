@@ -7,3 +7,7 @@ Extract the data from train set(subject_id, feature and activity) by reading the
 Similarly Extract the data from test set(subject_id, feature and activity) by reading the data to a variable and assign column name to it.
 Now combine both the data sets using rbind and generate output.
 
+Data set consists of following files
+readme.md
+Codebook.md
+Coursera_Project.R 
