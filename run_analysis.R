@@ -41,3 +41,24 @@ Train_Data<- cbind(subject_train,X_train,Y_train)
 #Combined Data
 
 m<- rbind(Train_Data,Test_Data)
+
+
+# extract feature cols & names named 'mean, std'
+selectedCols <- grep("-(mean|std).*", as.character(Features[,2]))
+selectedColNames <- Features[selectedCols, 2]
+selectedColNames <- gsub("-mean", "Mean", selectedColNames)
+selectedColNames <- gsub("-std", "Std", selectedColNames)
+selectedColNames <- gsub("[-()]", "", selectedColNames)
+
+#Extract data by column names
+colnames(m) <- c("Subject", "Activity", selectedColNames)
+
+m$Activity <- factor(m$Activity, levels = m_label[,1], labels = m_label[,2])
+m$Subject <- as.factor(m$Subject)
+
+#Tidy dataset
+
+meltedData <- melt(m, id = c("Subject", "Activity"))
+tidyData <- dcast(meltedData, Subject + Activity ~ variable, mean)
+
+write.table(tidyData, "./tidy_dataset.txt", row.names = FALSE, quote = FALSE)
