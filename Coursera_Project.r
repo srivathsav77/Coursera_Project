@@ -11,13 +11,13 @@ download.file(fileUrl,"C:/Users/Srivathsav/Desktop/samsung.zip")
 unzip("C:/Users/Srivathsav/Desktop/samsung.zip")
 
 #Feature and Activity names 
-Features=read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/features.txt")
+Features<-read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/features.txt")
 
-Features=read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/features.txt")$V2
+Features<-read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/features.txt")$V2
 
-Activity_Labels=read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/activity_labels.txt")
+Activity_Labels<-read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/activity_labels.txt")
 
-Activity_Labels=read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/activity_labels.txt")$V2
+Activity_Labels<-read.table("C:/Users/Srivathsav/Desktop/UCI HAR Dataset/activity_labels.txt")$V2
 
 
 #Test Data
