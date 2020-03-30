@@ -8,6 +8,7 @@ Similarly Extract the data from test set(subject_id, feature and activity) by re
 Now combine both the data sets using rbind and generate output.
 
 This repository consists of following files
+
 readme.md
 
 Codebook.md
